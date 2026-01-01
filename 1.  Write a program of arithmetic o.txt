@@ -1,0 +1,429 @@
+1.  Write a program of arithmetic operations using switch statements. 
+Aim: 
+To demonstrate the use of switch statements in performing arithmetic operations based on user 
+input. 
+Algorithm: 
+Step 1: Start the program. 
+Step 2: Prompt the user to enter two numbers. 
+Step 3: Display a menu of arithmetic operations (addition, subtraction, multiplication, division). 
+Step 4: Read the user's choice. 
+Step  5:  Based  on  the  user's  choice,  use  a  switch  statement  to  perform  the  corresponding 
+arithmetic operation. 
+Step 6: Display the result of the operation. 
+Step 7: Stop the program. 
+C Program: 
+#include <stdio.h> 
+int main() { 
+    float num1, num2, result; 
+    int choice; 
+ 
+    printf("Enter two numbers: "); 
+    scanf("%f %f", &num1, &num2); 
+ 
+    printf("\nSelect the operation:\n"); 
+    printf("1. Addition\n"); 
+    printf("2. Subtraction\n"); 
+    printf("3. Multiplication\n"); 
+    printf("4. Division\n"); 
+    printf("Enter your choice (1-4): "); 
+    scanf("%d", &choice); 
+ 
+    // Switch statement for performing the operation 
+    switch (choice) { 
+        case 1: 
+            result = num1 + num2; 
+            printf("Result: %.2f + %.2f = %.2f\n", num1, num2, result); 
+            break; 
+        case 2: 
+            result = num1 - num2; 
+            printf("Result: %.2f - %.2f = %.2f\n", num1, num2, result); 
+            break; 
+        case 3: 
+            result = num1 * num2; 
+            printf("Result: %.2f * %.2f = %.2f\n", num1, num2, result); 
+            break; 
+        case 4: 
+            if (num2 != 0) { 
+                result = num1 / num2; 
+                printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result); 
+            } else { 
+                printf("Error! Division by zero is not possible.\n"); 
+            } 
+            break; 
+        default: 
+            printf("Invalid choice! Please select a valid operation.\n"); 
+    } 
+ 
+    return 0; 
+} 
+ 
+Output: 
+Enter two numbers: 12      
+8 
+Select the operation: 
+1. Addition 
+2. Subtraction 
+3. Multiplication 
+4. Division 
+Enter your choice (1-4): 2 
+Result: 12.00 - 8.00 = 4.00 
+ 
+Result: 
+Thus the program successfully performs the selected arithmetic operation based on user input 
+and displays the correct result.  
+ 
+2. Write a program to find the number is prime or not. 
+Aim: 
+To write a C program that checks whether a given number is prime or not. 
+Algorithm: 
+1.  Start the program. 
+2.  Read an integer number from the user. 
+3.  Check if the number is less than or equal to 1. If so, it is not prime. 
+4.  Check if the number is 2 or 3, which are prime. 
+5.  For numbers greater than 3, check divisibility from 2 to the square root of the number. 
+6.  If the number is divisible by any number in that range, it is not prime. 
+7.  Display whether the number is prime or not. 
+8.  End the program. 
+C Program: 
+#include <stdio.h> 
+#include <math.h> 
+int main() { 
+    int num, i; 
+    int isPrime = 1; // Assume the number is prime initially 
+    printf("Enter a number: "); 
+    scanf("%d", &num); 
+ 
+     if (num <= 1) { 
+        isPrime = 0; 
+    } else if (num == 2 || num == 3) { 
+        isPrime = 1; 
+    } else { 
+         
+        for (i = 2; i <= sqrt(num); i++) { 
+            if (num % i == 0) { 
+                isPrime = 0; // Not a prime number 
+                break; 
+            } 
+        } 
+    } 
+ 
+    if (isPrime) { 
+        printf("%d is a prime number.\n", num); 
+    } else { 
+        printf("%d is not a prime number.\n", num); 
+    } 
+ 
+    return 0; 
+} 
+ 
+ 
+Output: 
+Example 1: 
+Enter a number: 29 
+29 is a prime number. 
+ 
+Example 2: 
+Enter a number: 15 
+15 is not a prime number. 
+ 
+Result: 
+Thus,  the  program  successfully  determines  whether  a  number  is  prime  or  not,  providing 
+accurate results based on the divisibility checks. 
+ 
+3.    Develop  a  C-program  to  find  the  maximum  of  three  numbers  using  conditional 
+operator. 
+Aim: 
+To write a C program that finds the maximum of three numbers using the conditional operator. 
+Algorithm: 
+1.  Start. 
+2.  Read three integer numbers from the user. 
+3.  Use an if-else ladder to compare the three numbers: 
+o  First, compare the first number with the second and third numbers. 
+o  If the first number is greater than or equal to both, it's the maximum. 
+o  If the second number is greater than or equal to both, it's the maximum. 
+o  Otherwise, the third number will be the maximum. 
+4.  Display the maximum of the three numbers. 
+5.  End. 
+C Program: 
+#include <stdio.h> 
+int main() { 
+    int num1, num2, num3; 
+ 
+    printf("Enter three numbers: "); 
+    scanf("%d %d %d", &num1, &num2, &num3); 
+ 
+        if (num1 >= num2 && num1 >= num3) { 
+        printf("The maximum of %d, %d, and %d is: %d\n", num1, num2, num3, num1); 
+    } 
+    else if (num2 >= num1 && num2 >= num3) { 
+        printf("The maximum of %d, %d, and %d is: %d\n", num1, num2, num3, num2); 
+    } 
+    else { 
+        printf("The maximum of %d, %d, and %d is: %d\n", num1, num2, num3, num3); 
+    } 
+ 
+    return 0; 
+} 
+ 
+OUTPUT: 
+Example 1: 
+Enter three numbers: 3 8 2 
+The maximum of 3, 8, and 2 is: 8 
+Example 2: 
+Enter three numbers: 12 5 7 
+The maximum of 12, 5, and 7 is: 12 
+Result: 
+Thus, the program was successfully determines the maximum of three numbers. 
+ 
+4. Write a program to find the sum of n natural numbers. 
+Aim: 
+To write a C program that finds the sum of the first n natural numbers. 
+Algorithm: 
+1.  Start. 
+2.  Read the value of n from the user, where n is the total number of natural numbers to 
+sum. 
+3.  Initialize a variable sum to store the sum of the numbers. 
+4.  Use a loop (either for, while, or do-while) to iterate from 1 to n, adding each number to 
+sum. 
+5.  Display the value of sum. 
+6.  End. 
+C Program: 
+#include <stdio.h> 
+ 
+int main() { 
+    int n, sum = 0; 
+    printf("Enter a positive integer: "); 
+    scanf("%d", &n); 
+    if (n < 1) { 
+        printf("Please enter a positive integer.\n"); 
+        return 1; 
+    } 
+    for (int i = 1; i <= n; i++) { 
+        sum += i; // Add each number to sum 
+    } 
+    printf("The sum of the first %d natural numbers is: %d\n", n, sum); 
+ 
+    return 0; 
+} 
+ 
+Output: 
+Example 1: 
+Enter a positive integer: 5 
+The sum of the first 5 natural numbers is: 15 
+Example 2: 
+Enter a positive integer: 10 
+The sum of the first 10 natural numbers is: 55 
+Result: 
+Thus the program successfully calculates the sum of the first n natural numbers, providing the 
+correct result based on the user input. 
+ 
+5. Write a program to check whether the given string is palindrome or not. 
+Aim: 
+To write a C program that checks whether a given string is a palindrome or not. A palindrome 
+is a string that reads the same backward as forward. 
+Algorithm: 
+1.  Start. 
+2.  Read a string from the user. 
+3.  Initialize two pointers: one at the beginning of the string and the other at the end. 
+4.  Compare the characters at the two pointers: 
+o  If they are the same, move the left pointer one step forward and the right pointer 
+one step backward. 
+o  If they are not the same, the string is not a palindrome. 
+5.  If  all  character  comparisons  are  successful  (i.e.,  the  characters  at  corresponding 
+positions are the same), the string is a palindrome. 
+6.  Display the result. 
+7.  End. 
+C Program: 
+#include <stdio.h> 
+#include <string.h> 
+#include <ctype.h> 
+ 
+int main() { 
+    char str[100], reversedStr[100]; 
+    int i, length, isPalindrome = 1; 
+    printf("Enter a string: "); 
+    fgets(str, sizeof(str), stdin); 
+    str[strcspn(str, "\n")] = '\0'; 
+    for (i = 0; str[i]; i++) { 
+        str[i] = tolower(str[i]); 
+    } 
+ 
+    length = strlen(str); 
+    for (i = 0; i < length / 2; i++) { 
+        if (str[i] != str[length - 1 - i]) { 
+            isPalindrome = 0;  // Not a palindrome 
+            break; 
+        } 
+    } 
+    if (isPalindrome) { 
+        printf("'%s' is a palindrome.\n", str); 
+    } else { 
+        printf("'%s' is not a palindrome.\n", str); 
+    } 
+ 
+    return 0; 
+} 
+Output: 
+Example 1: 
+Enter a string: madam 
+'madam' is a palindrome. 
+Example 2: 
+Enter a string: hello 
+'hello' is not a palindrome. 
+Example 3 (with case insensitivity): 
+Enter a string: RaceCar 
+'RaceCar' is a palindrome. 
+Result: 
+The program successfully checks whether a given string is a palindrome or not, considering 
+case insensitivity and properly handling both even and odd-length strings. 
+ 
+6. Write a program to check whether the given year is a leap year. 
+Aim: 
+To write a C program that checks whether a given year is a leap year or not. 
+Algorithm: 
+1.  Start. 
+2.  Read a year from the user. 
+3.  A year is a leap year if: 
+o  It is divisible by 400, or 
+o  It is divisible by 4 but not divisible by 100. 
+4.  Check the divisibility conditions: 
+o  If the year is divisible by 400, it is a leap year. 
+o  If the year is divisible by 4 and not divisible by 100, it is also a leap year. 
+o  Otherwise, it is not a leap year. 
+5.  Display the result. 
+6.  End. 
+C Program: 
+#include <stdio.h> 
+int main()  
+{ 
+    int year; 
+    printf("Enter a year: "); 
+    scanf("%d", &year); 
+if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))  
+{ 
+        printf("%d is a leap year.\n", year); 
+}  
+else  
+{ 
+        printf("%d is not a leap year.\n", year); 
+    } 
+ 
+    return 0; 
+} 
+Output: 
+Example 1: 
+Enter a year: 2024 
+2024 is a leap year. 
+Example 2: 
+Enter a year: 2023 
+2023 is not a leap year. 
+ 
+Result: 
+The program successfully determines if the given year is a leap year or not, correctly handling 
+the leap year rules. 
+ 
+7. Write a program to find the factorial of a number using a loop. 
+Aim: 
+To write a C program that calculates the factorial of a number using a loop. 
+Algorithm: 
+1.  Start. 
+2.  Read a positive integer n from the user. 
+3.  Initialize a variable factorial to 1. 
+4.  Use a loop to multiply the numbers from 1 to n: 
+o  Start from 1 and multiply factorial by the loop variable. 
+o  Continue until the loop reaches n. 
+5.  Display the value of factorial as the result. 
+6.  End. 
+C Program: 
+#include <stdio.h> 
+int main() { 
+    int n, i; 
+    long long factorial = 1;  
+    printf("Enter a positive integer: "); 
+    scanf("%d", &n); 
+ 
+    if (n < 0) { 
+        printf("Factorial is not defined for negative numbers.\n"); 
+    } else { 
+         
+        for (i = 1; i <= n; i++) { 
+            factorial *= i; // Multiply factorial by i 
+        } 
+        printf("The factorial of %d is: %lld\n", n, factorial); 
+    } 
+ 
+    return 0; 
+} 
+ 
+Output: 
+Example 1: 
+Enter a positive integer: 5 
+The factorial of 5 is: 120 
+Example 2: 
+Enter a positive integer: 0 
+The factorial of 0 is: 1 
+Example 3 (Negative input): 
+Enter a positive integer: -4 
+Factorial is not defined for negative numbers. 
+Result: 
+The program successfully calculates the factorial of a number using a looping statement.  
+ 
+ 
+ 
+8. Write a C program to Calculate GCD and LCM of two numbers. 
+Aim: 
+To write a C program that calculates the Greatest Common Divisor (GCD) and Least Common 
+Multiple (LCM) of two integers. 
+Algorithm: 
+1.  For GCD: 
+o  Start by reading two integers a and b. 
+o  Use  the  Euclidean  algorithm  to  find  the  GCD.  This  algorithm  works  by 
+repeatedly replacing the larger number with the remainder of the larger number 
+divided by the smaller number, until one of the numbers becomes 0. The other 
+number will be the GCD. 
+2.  For LCM: 
+o  Use the formula LCM(a, b) = (a * b) / GCD(a, b) to calculate the LCM after 
+calculating the GCD. 
+3.  Display the values of GCD and LCM. 
+4.  End. 
+C Program: 
+ 
+#include <stdio.h> 
+ 
+int gcd(int a, int b) { 
+    while (b != 0) { 
+        int temp = b; 
+        b = a % b; 
+        a = temp; 
+    } 
+    return a; 
+} 
+ 
+int lcm(int a, int b, int gcd_val) { 
+    return (a * b) / gcd_val; 
+} 
+ 
+int main() { 
+    int a, b; 
+    printf("Enter two integers: "); 
+    scanf("%d %d", &a, &b); 
+    int gcd_val = gcd(a, b); 
+    int lcm_val = lcm(a, b, gcd_val); 
+    printf("GCD of %d and %d is: %d\n", a, b, gcd_val); 
+    printf("LCM of %d and %d is: %d\n", a, b, lcm_val); 
+    return 0; 
+} 
+ 
+Output: 
+Example 1: 
+Enter two integers: 12 15 
+GCD of 12 and 15 is: 3 
+LCM of 12 and 15 is: 60 
+LCM of 7 and 14 is: 14 
+Example 2: 
+Enter two integers: 25 30 
+GCD of 25 and 30 is: 5 
+LCM of 25 and 30 is: 150 
+Result: 
+Thus, the program correctly calculates the GCD using the Euclidean algorithm and computes 
+the LCM using the relationship between GCD and LC
